@@ -7,6 +7,9 @@ case $- in
       *) return;;
 esac
 
+export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="/usr/bin/node/bin:${PATH}"
+
 # Source aliases from aliases.sh
 if [[ -f "${HOME}/dotfiles/aliases.sh" ]]; then
     source "${HOME}/dotfiles/aliases.sh"
