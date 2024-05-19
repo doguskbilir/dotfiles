@@ -110,11 +110,24 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " List of plugins
+" Colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'joshdick/onedark.vim'
 Plug 'crusoexia/vim-monokai'
+
+" YouCompleteMe
+"Plug 'Valloric/YouCompleteMe'
+
+" coc.nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" ALE for linting and autocompletion support
+Plug 'dense-analysis/ale'
+
+" Sensible default settings for Vim
+Plug 'tpope/vim-sensible'
 
 " Initialize plugin system
 call plug#end()
@@ -127,3 +140,22 @@ if &diff
     colorscheme desert
 endif
 
+" ALE configuration
+let g:ale_linters = {
+\   'python': ['flake8'],
+\   'sh': ['shellcheck'],
+\}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black', 'isort'],
+\   'sh': ['shfmt'],
+\}
+let g:ale_python_flake8_executable = 'flake8'
+let g:ale_python_flake8_options = '--max-line-length=88'
+
+" YouCompleteMe configuration
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf = 0
+
+" coc.nvim configuration
+let g:coc_global_extensions = ['coc-pyright', 'coc-sh']
