@@ -29,7 +29,7 @@ set laststatus=2
 set backspace=indent,eol,start
 
 " By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
-" shown in any window) that has unsaved changes. This is to prevent you from 
+" shown in any window) that has unsaved changes. This is to prevent you from
 " forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
 " hidden buffers helpful enough to disable this protection. See `:help hidden`
 " for more information on this.
@@ -97,3 +97,33 @@ set shiftwidth=4
 " This is separate from tabstop because you might want to use a different number
 " of spaces for tabs than you do for <Tab>s.
 set softtabstop=4
+
+" Ensure that Vim is using 256 colors
+if $COLORTERM == 'truecolor' || $COLORTERM == '24bit'
+    set termguicolors
+else
+    set t_Co=256
+endif
+
+
+" Specify a directory for plugins (e.g., ~/.vim/plugged)
+call plug#begin('~/.vim/plugged')
+
+" List of plugins
+Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'joshdick/onedark.vim'
+Plug 'crusoexia/vim-monokai'
+
+" Initialize plugin system
+call plug#end()
+
+" Set a default color scheme
+colorscheme dracula  " Replace 'gruvbox' with your preferred color scheme
+
+" Color scheme for vimdiff
+if &diff
+    colorscheme desert
+endif
+
