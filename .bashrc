@@ -37,6 +37,9 @@ shopt -s checkwinsize
 export EDITOR=vim
 export VISUAL=vim
 
+# Make sure that Terminal emulator is using 256 colors
+export TERM=xterm-256color
+
 # Set the prompt color
 export PS1="\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\]\$ "
 
