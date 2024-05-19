@@ -51,3 +51,10 @@ disabled = false
 
 [username]
 show_always = true
+
+[custom.shell_script]
+detect_extensions = ['sh']
+disabled = false
+symbol = "  "
+style = "green bold"
+format = "via [$symbol]($style)"
