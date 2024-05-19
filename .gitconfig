@@ -1,0 +1,13 @@
+[user]
+    name = Dogus K. Bilir
+    email = 85401781+doguskbilir@users.noreply.github.com
+[init]
+    defaultBranch = main
+
+[alias]
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
