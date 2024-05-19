@@ -1,0 +1,53 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = "$all"
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+#ssh_symbol = " "
+ssh_only = true
+
+[os]
+disabled = true
+
+[os.symbols]
+Fedora = " "
+Linux = " "
+Redhat = " "
+RedHatEnterprise = " "
+Ubuntu = " "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[python]
+symbol = " "
+
+[sudo]
+disabled = false
+
+[username]
+show_always = true
