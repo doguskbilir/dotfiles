@@ -1,5 +1,6 @@
 [user]
     name = Dogus Kaan Bilir
+	email = bilir@dkrz.de
 
 [init]
     defaultBranch = main
