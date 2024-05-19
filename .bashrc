@@ -7,6 +7,9 @@ case $- in
       *) return;;
 esac
 
+# For Levante
+export PATH="${HOME}/.local/bin:${PATH}"
+
 # Source aliases from aliases.sh
 if [[ -f "${HOME}/dotfiles/aliases.sh" ]]; then
     source "${HOME}/dotfiles/aliases.sh"
@@ -46,9 +49,9 @@ export HISTTIMEFORMAT="%F %T "
 # Ignore duplicates and commands starting with a space
 HISTCONTROL=ignoreboth
 # Set the history size
-HISTSIZE=1000
+HISTSIZE=2000
 # Set the history file size
-HISTFILESIZE=2000
+HISTFILESIZE=4000
 # Append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -57,3 +60,35 @@ umask 022
 
 # Use vim keybindings in the terminal
 set -o vi
+
+#################################################
+# Levante Specific Configurations
+#################################################
+
+export DY="/fastdata/ka1081/DYAMOND"
+export DYSUMMER="/fastdata/ka1081/DYAMOND/data/summer_data"
+export DYWINTER="/fastdata/ka1081/DYAMOND/data/winter_data"
+export ARCHWINTER="/arch/bk1040/dyamond_winter"
+export ARCHWINTERPP="/arch/bk1040/dyamond_winter_post_processed"
+export ARCHSUMMER="/arch/mh1113/"
+
+# From easy.gems.dkrz.de
+maxmem_running () {
+    sstat --format=AveCPU,MaxRSS,AveRSS,JobID -j "$1" --allsteps;
+    }
+maxmem_terminated () {
+    sacct --format=JobID,JobName,MaxRSS,Elapsed -j "$1" ;
+    }
+
+# Import modules
+module load git python3 ncview cdo slk tmux/3.2a-gcc-11.2.0
+
+# Do not exit with Ctrl - D
+set -o ignoreeof
+
+# Quick history search
+histg () {
+    history | grep "$1"
+    }
+
+#EOF
