@@ -19,3 +19,6 @@
 
 [difftool]
     prompt = false
+
+[url "git@github.com:"]
+    insteadOf = https://github.com/
