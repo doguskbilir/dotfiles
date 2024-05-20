@@ -159,3 +159,13 @@ let g:ale_python_flake8_options = '--max-line-length=88'
 
 " coc.nvim configuration
 let g:coc_global_extensions = ['coc-pyright', 'coc-sh']
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <CR> to confirm selection and close popup menu
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
+
+" Use <c-space> to trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
