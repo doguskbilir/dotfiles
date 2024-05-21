@@ -74,6 +74,7 @@ export DYWINTER="/fastdata/ka1081/DYAMOND/data/winter_data"
 export ARCHWINTER="/arch/bk1040/dyamond_winter"
 export ARCHWINTERPP="/arch/bk1040/dyamond_winter_post_processed"
 export ARCHSUMMER="/arch/mh1113/"
+export TEMP="/fastdata/ka1081/temp"
 
 # From easy.gems.dkrz.de
 maxmem_running() {
@@ -84,7 +85,13 @@ maxmem_terminated() {
 }
 
 # Import modules
-module load git python3 ncview cdo slk tmux/3.2a-gcc-11.2.0
+module load git \
+    python3 \
+    ncview \
+    cdo \
+    slk \
+    tmux/3.2a-gcc-11.2.0 \
+    vim/9.0.1672-gcc-11.2.0
 
 # Do not exit with Ctrl - D
 set -o ignoreeof
