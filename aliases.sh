@@ -32,6 +32,6 @@ alias ltr='ls -ltAr'
 # List files sorted by last access time (recent at top)
 alias lu='ls -ltuA'
 # List files sorted by last access time (recent at bottom)
-alias lur='ls -ltuA'
+alias lur='ls -ltuAr'
 
 #EOF
