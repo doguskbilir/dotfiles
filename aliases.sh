@@ -34,16 +34,4 @@ alias lu='ls -ltuA'
 # List files sorted by last access time (recent at bottom)
 alias lur='ls -ltuA'
 
-#######################################
-# Levante Specific Aliases
-#######################################
-
-alias sqme="squeue -u k202158 --long"
-alias chdyamond="cd /fastdata/ka1081/DYAMOND"
-alias lame="la | grep k202158"
-alias pwdp="pwd -P"
-alias vi="vim"
-alias slkh="slk_helpers"
-alias allocme="salloc --x11 --mem=50GB --partition=interactive --account=k20200 --time=08:00:00"
-alias stjob="scontrol show job"
-alias tailslk='tail ~/.slk/slk-cli.log'
+#EOF
