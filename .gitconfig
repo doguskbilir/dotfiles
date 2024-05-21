@@ -10,7 +10,7 @@
     last = log -1 HEAD
     co = checkout
     br = branch
-    ci = commit
+    ci = commit -m
     st = status
     d = difftool
 
