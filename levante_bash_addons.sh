@@ -12,7 +12,7 @@ export DYWINTER="/fastdata/ka1081/DYAMOND/data/winter_data"
 export ARCHWINTER="/arch/bk1040/dyamond_winter"
 export ARCHWINTERPP="/arch/bk1040/dyamond_winter_post_processed"
 export ARCHSUMMER="/arch/mh1113/"
-export TEMP="/fastdata/ka1081/temp"
+export MYTEMP="/fastdata/ka1081/temp"
 
 # From easy.gems.dkrz.de
 maxmem_running() {
@@ -49,8 +49,9 @@ alias lame="la | grep k202158"
 alias pwdp="pwd -P"
 alias vi="vim"
 alias slkh="slk_helpers"
-alias allocme="salloc --x11 --mem=50GB --partition=interactive --account=k20200 --time=08:00:00"
+alias allocme="salloc --x11 --mem=64GB --partition=interactive --account=k20200 --time=09:00:00"
 alias stjob="scontrol show job"
 alias tailslk='tail ~/.slk/slk-cli.log'
+alias topme='top -u k202158'
 
 #EOF
