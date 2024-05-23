@@ -5,6 +5,10 @@ set nocompatible
 " Turn on syntax highlighting.
 syntax on
 
+" File type detection
+filetype plugin on
+filetype indent on
+
 " Disable the default Vim startup message.
 set shortmess+=I
 
@@ -111,14 +115,8 @@ call plug#begin('~/.vim/plugged')
 
 " List of plugins
 " Colorschemes
-Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'joshdick/onedark.vim'
-Plug 'crusoexia/vim-monokai'
-
-" YouCompleteMe
-"Plug 'Valloric/YouCompleteMe'
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -128,6 +126,10 @@ Plug 'dense-analysis/ale'
 
 " Sensible default settings for Vim
 Plug 'tpope/vim-sensible'
+
+" Markdown plugins
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 " Initialize plugin system
 call plug#end()
@@ -153,10 +155,6 @@ let g:ale_fixers = {
 let g:ale_python_flake8_executable = 'flake8'
 let g:ale_python_flake8_options = '--max-line-length=88'
 
-" YouCompleteMe configuration
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-"let g:ycm_confirm_extra_conf = 0
-
 " coc.nvim configuration
 let g:coc_global_extensions = ['coc-pyright', 'coc-sh']
 
@@ -169,3 +167,5 @@ inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
+
+"EOF
