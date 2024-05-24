@@ -142,7 +142,7 @@ Plug 'preservim/vim-markdown'
 call plug#end()
 
 " Light theme
-colorscheme github
+colorscheme one
 
 " Dark theme
 colorscheme dracula
@@ -180,6 +180,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Toggle between dark and light themes
 nnoremap <F5> :set background=dark<CR>:colorscheme dracula<CR>
-nnoremap <F6> :set background=light<CR>:colorscheme github<CR>
+nnoremap <F6> :set background=light<CR>:colorscheme one<CR>
 
 "EOF
