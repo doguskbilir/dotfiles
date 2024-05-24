@@ -12,6 +12,9 @@ filetype indent on
 " Disable the default Vim startup message.
 set shortmess+=I
 
+" Disable folding
+set nofoldenable
+
 " Show line numbers.
 set number
 
