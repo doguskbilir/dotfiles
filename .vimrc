@@ -120,6 +120,10 @@ call plug#begin('~/.vim/plugged')
 " Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'joshdick/onedark.vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'cormacrelf/vim-colors-github'
+Plug 'rakr/vim-one'
 
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -137,8 +141,11 @@ Plug 'preservim/vim-markdown'
 " Initialize plugin system
 call plug#end()
 
-" Set a default color scheme
-colorscheme dracula  " Replace 'gruvbox' with your preferred color scheme
+" Light theme
+colorscheme github
+
+" Dark theme
+colorscheme dracula
 
 " Color scheme for vimdiff
 if &diff
@@ -170,5 +177,9 @@ inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 
 " Use <c-space> to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" Toggle between dark and light themes
+nnoremap <F5> :set background=dark<CR>:colorscheme dracula<CR>
+nnoremap <F6> :set background=light<CR>:colorscheme github<CR>
 
 "EOF
