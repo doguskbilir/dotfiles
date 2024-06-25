@@ -7,6 +7,10 @@ case $- in
 *) return ;;
 esac
 
+export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="/usr/bin/node/bin:${PATH}"
+export PATH="${HOME}/.local/share/gem/ruby/3.0.0/bin:${PATH}"
+
 # Source aliases from aliases.sh
 if [[ -f "${HOME}/dotfiles/aliases.sh" ]]; then
     source "${HOME}/dotfiles/aliases.sh"
@@ -17,6 +21,11 @@ if [[ "$(hostname)" == *"lvt.dkrz.de"* ]]; then
     if [[ -f "${HOME}/dotfiles/levante_bash_addons.sh" ]]; then
         source "${HOME}/dotfiles/levante_bash_addons.sh"
     fi
+fi
+
+# Source functions from bash_functions.sh
+if [[ -f "${HOME}/dotfiles/bash_functions.sh" ]]; then
+    source "${HOME}/dotfiles/bash_functions.sh"
 fi
 
 # Set up starship prompt
@@ -68,4 +77,18 @@ umask 022
 # Use vim keybindings in the terminal
 set -o vi
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/doguskbilir/anaconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/doguskbilir/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/doguskbilir/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/doguskbilir/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 #EOF
