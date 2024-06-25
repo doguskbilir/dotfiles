@@ -9,10 +9,16 @@ esac
 
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="/usr/bin/node/bin:${PATH}"
+export PATH="${HOME}/.local/share/gem/ruby/3.0.0/bin:${PATH}"
 
 # Source aliases from aliases.sh
 if [[ -f "${HOME}/dotfiles/aliases.sh" ]]; then
     source "${HOME}/dotfiles/aliases.sh"
+fi
+
+# Source functions from bash_functions.sh
+if [[ -f "${HOME}/dotfiles/bash_functions.sh" ]]; then
+    source "${HOME}/dotfiles/bash_functions.sh"
 fi
 
 # Set up starship prompt
